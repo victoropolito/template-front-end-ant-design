@@ -1,5 +1,32 @@
-# Vue 3 + Vite
+# CHAMELEON STACK - TEMPLATE ANT-DESIGN
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is the front-end of a Kanban solution project developed in Vue.js 3, aimed at development teams looking for an adaptable and efficient task management tool.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+### 📋 PREREQUISITES
+
+- NodeJs
+- NPM
+- Docker
+- Vue.js
+
+### 🔧 INSTALLING PREREQUISITES
+
+## Installing NodeJS, NPM and Docker
+
+Follow the steps in the following link to setup the back-end properly:
+
+Link: [Chameleon-Backend](https://github.com/Chameleon-Stack/template-nodejs-express-mongo-prisma)
+
+### PROJECT SETUP
+
+Run the code to install all dependencies:
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+To run the project, just run the code:
+```sh
+npm run dev
+``` 
