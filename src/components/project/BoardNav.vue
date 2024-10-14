@@ -1,34 +1,43 @@
 <template>
-  <a-row align="middle" justify="space-between" class="mb-6" style="height: auto;">
-    <a-col class="brand-name">
-      <a-icon type="infinity" class="mr-2" />
-      <span class="brand-title">Projeto Chameleon</span>
+  <a-row justify="space-between" class="custom-row">
+    <a-col :span="12" class="left-align">
+      <div class="brand-title">Projeto Chameleon</div>
     </a-col>
-    <a-col>
-      <CreateIssueModal v-model="dialog">ADD TASK</CreateIssueModal>
+    <a-col :span="12" class="right-align">
+      <create-issue-modal></create-issue-modal>
     </a-col>
   </a-row>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import CreateIssueModal from './modals/CreateIssueModal.vue'
-
-const dialog = ref(false)
+import createIssueModal from './modals/CreateIssueModal.vue'
 </script>
 
 <style scoped>
-.brand-name {
+.custom-row {
+  width: 100%;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.board-nav {
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow: auto;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .brand-title {
   font-size: larger;
-  font-weight: bold;
-}
-
-.create-issue-btn {
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  color: black;
 }
 </style>
