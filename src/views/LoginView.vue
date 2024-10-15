@@ -2,14 +2,9 @@
   <div class="container">
     <a-card
       class="mx-auto pa-12 pb-8"
-      hoverable
     >
       <div class="header-logo center-card">
-        <!-- <img src="@/assets/logo.png" alt="Logo" class="logo" /> -->
-        <!-- <Image
-        width={200}
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        /> -->
+        <img src="../assets/logo.png" alt="Logo" class="logo" />
       </div>
 
       <a-form
@@ -100,6 +95,7 @@ export default {
   align-items: center;
   width: 100vw;
   height: 100vh;
+  border: 1px solid black;
 }
 
 .router-button {

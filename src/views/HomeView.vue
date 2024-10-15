@@ -1,23 +1,16 @@
 <template>
   <div class="common-layout">
-    <a-layout style="padding-top: 5px">
-      <a-layout-header class="header">
+    <a-layout>
+      <a-layout-header class="header" style="background-color: #f0f0f0; color: #000;">
         <div class="header-left">
-          <!-- Logo space -->
           <div class="header-logo">
-            <!-- <img src="@/assets/logo.png" alt="Logo" class="logo"> -->
+            <img src="../assets/logo.png" alt="Logo" class="logo">
           </div>
-
-          <!-- Divider -->
           <a-divider type="vertical" style="margin-left: 5px;" />
         </div>
-
-        <!-- Search input -->
         <div class="header-center">
           <a-input-search placeholder="Pesquisar" v-model:value="searchQuery" class="search-input" />
         </div>
-
-        <!-- Notifications and avatar space -->
         <div class="header-right">
           <a-dropdown>
             <a-avatar size="large">
@@ -25,9 +18,6 @@
             </a-avatar>
             <template #overlay>
               <a-menu>
-                <a-menu-item key="edit">
-                  <a-button type="text">Editar Conta</a-button>
-                </a-menu-item>
                 <a-menu-item key="logout">
                   <a-button type="text">
                     <router-link to="/">Desconectar</router-link>
@@ -36,17 +26,14 @@
               </a-menu>
             </template>
           </a-dropdown>
-
           <div class="user-details">
             <b class="user-name">{{ userState.name }}</b>
-            <p class="text-caption mt-1">{{ userState.email }}</p>
+            <p>{{ userState.email }}</p>
           </div>
         </div>
       </a-layout-header>
-
-      <!-- Main content -->
       <a-layout-content class="main">
-        <BoardNav class="board-nav" />
+        <BoardNav />
         <a-divider />
         <Board :userId="userState.id" />
       </a-layout-content>
@@ -107,7 +94,7 @@ export default {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Espaço entre os elementos principais */
+  justify-content: space-between;
 }
 
 .header-left,
@@ -133,7 +120,7 @@ export default {
 }
 
 .header-logo {
-  margin: 0px 15px 0px 10px;
+  margin: 15px 10px 15px -15px;
 }
 
 .logo {
@@ -150,9 +137,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-  padding: 5px;
   text-align: left;
-  color: black;
 }
 
 .user-name {

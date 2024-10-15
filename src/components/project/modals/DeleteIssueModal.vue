@@ -1,6 +1,8 @@
 <template>
   <div>
-    <a-button type="danger" icon="DeleteOutlined" shape="circle" @click="openModal" />
+    <a-button type="primary" danger @click="openModal">
+      <DeleteOutlined />
+    </a-button>
 
     <a-modal v-model:visible="modalOpen" :width="500" title="Excluir tarefa?" @cancel="modalOpen = false">
       <span>Deseja mesmo excluir a tarefa? Essa ação é irreversível!</span>

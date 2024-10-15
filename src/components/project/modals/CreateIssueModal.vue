@@ -1,20 +1,23 @@
 <template>
   <div>
     <a-button type="primary" size="large" @click="openModal">
-      <b>Nova Task</b>
+      Nova Task
     </a-button>
 
-    <a-modal v-model:visible="modalOpen" :width="600" title="Adicionar nova tarefa" @cancel="closeModal">
-      <a-form @submit.prevent="submitForm" layout="vertical">
+    <a-modal 
+      v-model:visible="modalOpen" 
+      :width="600" title="Adicionar nova tarefa" 
+      @cancel="closeModal">
+      <a-form layout="vertical">
         <a-form-item label="Título da Tarefa" required>
-          <a-input v-model="form.title" />
+          <a-input v-model:value="form.title" />
         </a-form-item>
         <a-form-item label="Descrição" required>
-          <a-textarea v-model="form.description" />
+          <a-textarea v-model:value="form.description" />
         </a-form-item>
         <create-category-modal style="margin-bottom: 5px;" @category-created="fetchCategories" />
         <a-form-item label="Categorias">
-          <a-select v-model="form.category_ids" mode="multiple" placeholder="Selecione">
+          <a-select v-model:value="form.category_ids" mode="multiple" placeholder="Selecione">
             <a-select-option v-for="category in categoriesItems" :key="category.id" :value="category.id">
               {{ category.name }}
             </a-select-option>
@@ -83,7 +86,6 @@ export default {
         this.closeModal()
       } catch (error) {
         console.error('Erro ao salvar tarefa:', error)
-        alert('Erro ao salvar tarefa. Preencha os campos obrigatórios.')
       }
     },
     async fetchCategories() {

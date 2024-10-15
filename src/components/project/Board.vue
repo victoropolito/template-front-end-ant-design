@@ -1,6 +1,6 @@
 <template>
-  <a-layout>
-    <a-row :gutter="20">
+  <a-layout class="board-layout">
+    <a-row :gutter="10">
       <card-column :status-label="'Não iniciado'" :cards="filteredCards('BACKLOG')" />
       <card-column :status-label="'Em Progresso'" :cards="filteredCards('IN PROGRESS')" />
       <card-column :status-label="'Concluído'" :cards="filteredCards('COMPLETED')" />
@@ -44,3 +44,11 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.board-layout {
+  justify-content: flex-start;
+  padding: 10px;
+  margin: 10px 20px 5px 10px;
+}
+</style>

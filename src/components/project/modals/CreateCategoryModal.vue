@@ -1,7 +1,7 @@
 <template>
   <div>
-    <a-button @click="openModal" type="primary" size="small" icon="PlusOutlined">
-      Criar nova categoria
+    <a-button @click="openModal" type="primary" size="small">
+      <PlusOutlined />Criar nova categoria
     </a-button>
 
     <a-modal v-model:visible="modalOpen" :width="400" title="Criar nova categoria" @cancel="modalOpen = false">

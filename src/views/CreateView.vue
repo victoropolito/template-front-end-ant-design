@@ -2,11 +2,7 @@
   <div class="container">
     <a-card class="mx-auto pa-12 pb-8" hoverable>
       <div class="header-logo center-card">
-        <!-- <img src="@/assets/logo.png" alt="Logo" class="logo" /> -->
-        <!-- <Image
-        width={200}
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-      /> -->
+        <img src="../assets/logo.png" alt="Logo" class="logo" />
       </div>
 
       <a-form layout="vertical" :model="form" style="min-width:400px; max-width: 600px; display: flex; flex-direction: column">
@@ -47,7 +43,6 @@
 </template>
 
 <script>
-// import { Image } from 'antd';
 
 export default {
   data() {

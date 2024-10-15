@@ -1,10 +1,10 @@
 <template>
   <a-row justify="space-between" class="custom-row">
     <a-col :span="12" class="left-align">
-      <div class="brand-title">Projeto Chameleon</div>
+      <div class="brand-title"><strong>Projeto Chameleon</strong></div>
     </a-col>
     <a-col :span="12" class="right-align">
-      <create-issue-modal></create-issue-modal>
+      <create-issue-modal/>
     </a-col>
   </a-row>
 </template>
@@ -16,6 +16,7 @@ import createIssueModal from './modals/CreateIssueModal.vue'
 <style scoped>
 .custom-row {
   width: 100%;
+  padding: 15px 25px 0px 25px;
 }
 
 .left-align {

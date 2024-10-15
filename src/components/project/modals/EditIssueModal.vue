@@ -1,17 +1,19 @@
 <template>
   <div>
-    <a-button type="primary" icon="EditOutlined" shape="circle" @click="openModal" />
+    <a-button type="primary" @click="openModal">
+      <EditOutlined />
+    </a-button>
 
     <a-modal v-model:visible="modalOpen" :width="600" title="Editar Tarefa" @cancel="closeModal">
       <a-form @submit.prevent="submitForm" layout="vertical">
         <a-form-item label="Novo título" required>
-          <a-input v-model="editCard.title" />
+          <a-input v-model:value="editCard.title" />
         </a-form-item>
         <a-form-item label="Nova descrição" required>
-          <a-textarea v-model="editCard.description" />
+          <a-textarea v-model:value="editCard.description" />
         </a-form-item>
         <a-form-item label="Novo status" required>
-          <a-select v-model="editCard.status" placeholder="Selecione">
+          <a-select v-model:value="editCard.status" placeholder="Selecione">
             <a-select-option v-for="status in allStatus" :key="status" :value="status">
               {{ status }}
             </a-select-option>
@@ -21,7 +23,7 @@
           <create-category-modal @category-created="fetchCategories" />
         </div>
         <a-form-item label="Categorias">
-          <a-select v-model="editCard.category_ids" mode="multiple" placeholder="Selecione">
+          <a-select v-model:value="editCard.category_ids" mode="multiple" placeholder="Selecione">
             <a-select-option v-for="category in categoriesItems" :key="category.id" :value="category.id">
               {{ category.name }}
             </a-select-option>
