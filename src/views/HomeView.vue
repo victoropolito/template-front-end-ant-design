@@ -1,7 +1,7 @@
 <template>
   <div class="common-layout">
     <a-layout>
-      <a-layout-header class="header" style="background-color: #f0f0f0; color: #000;">
+      <a-layout-header class="header">
         <div class="header-left">
           <div class="header-logo">
             <img src="../assets/logo.png" alt="Logo" class="logo">
@@ -19,17 +19,17 @@
             <template #overlay>
               <a-menu>
                 <a-menu-item key="logout">
-                  <a-button type="text">
-                    <router-link to="/">Desconectar</router-link>
+                  <a-button type="text" @click="handleLogout">
+                    Desconectar
                   </a-button>
                 </a-menu-item>
               </a-menu>
             </template>
           </a-dropdown>
-          <div class="user-details">
-            <b class="user-name">{{ userState.name }}</b>
-            <p>{{ userState.email }}</p>
-          </div>
+        </div>
+        <div class="user-details">
+          <b class="user-name">{{ userState.name }}</b>
+          <span class="user-email">{{ userState.email }}</span>
         </div>
       </a-layout-header>
       <a-layout-content class="main">
@@ -51,6 +51,13 @@ export default {
   data() {
     return {
       searchQuery: ''
+    }
+  },
+  methods: {
+    handleLogout() {
+      this.$store.dispatch('logoutUser')
+      sessionStorage.clear()
+      this.$router.push('/')
     }
   },
   computed: {
@@ -95,6 +102,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #f0f0f0;
+  color: #000;
 }
 
 .header-left,
@@ -117,7 +126,9 @@ export default {
 .header-right {
   flex: 1;
   justify-content: flex-end;
+  align-items: center; /* Garante que o conteúdo esteja alinhado verticalmente */
 }
+
 
 .header-logo {
   margin: 15px 10px 15px -15px;
@@ -136,11 +147,20 @@ export default {
 .user-details {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: 10px;
+  padding: 10px 0px 10px 10px;
   text-align: left;
+  color: black;
 }
 
 .user-name {
   font-weight: bold;
+  margin-bottom: 2px;
+  margin: 5px 0px -40px 0px;
+}
+
+.user-email {
+  font-size: 14px;
 }
 </style>

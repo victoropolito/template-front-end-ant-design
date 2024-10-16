@@ -8,7 +8,7 @@
         </div>
       </template>
 
-      <a-card v-for="card in cards" :key="card.id" class="inner-card " hoverable>
+      <a-card v-for="card in cards" :key="card.id" class="inner-card " >
         <template #title>
           <strong>{{ card.title }}</strong>
         </template>

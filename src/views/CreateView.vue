@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <a-card class="mx-auto pa-12 pb-8" hoverable>
+    <a-card class="mx-auto pa-12 pb-8">
       <div class="header-logo center-card">
         <img src="../assets/logo.png" alt="Logo" class="logo" />
       </div>
@@ -19,7 +19,8 @@
         <a-form-item>
           <div class="avatar-form-item">
             <a-avatar size="large">
-              <a-button icon="camera" shape="circle">
+              <a-button shape="circle" :size="small" type="primary">
+                <CameraTwoTone/>
                 <input type="file" ref="fileInput" class="file-input" @change="handleFileUpload" />
               </a-button>
             </a-avatar>
@@ -27,7 +28,7 @@
         </a-form-item>
 
         <a-button @click="submitForm" type="primary" size="large" block>
-          <router-link to="/">
+          <router-link to="/" class="text-white">
             <b>Criar novo usuário</b>
           </router-link>
         </a-button>
@@ -43,8 +44,12 @@
 </template>
 
 <script>
+import { CameraTwoTone } from '@ant-design/icons-vue'
 
 export default {
+  components: {
+    CameraTwoTone
+  },
   data() {
     return {
       form: {
@@ -73,6 +78,10 @@ export default {
 </script>
 
 <style scoped>
+.text-white{
+  text-decoration: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -121,6 +130,5 @@ export default {
   width: 100%;
   height: 100%;
   opacity: 0;
-  cursor: pointer;
 }
 </style>
